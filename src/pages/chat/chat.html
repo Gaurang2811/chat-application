@@ -1,0 +1,39 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat Freely</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div class="chatMessages">
+	<div *ngFor="let message of messages" [class]="message.specialMsg ? 'messages specialMsg' : 'messages'">
+		<div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+			<div class="username">{{ message.username }}</div>
+			<div class="message">{{ message.message }}</div>
+		</div>
+	</div>
+</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input type="text" [(ngModel)]="message"></ion-input>
+    <ion-buttons end (click)="sendMessage()">
+      <button ion-button icon-right color="primary">
+        Send
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
