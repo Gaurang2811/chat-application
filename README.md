@@ -1,31 +1,26 @@
-<<<<<<< HEAD
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# chat-application
 
-## How to use this template
+## Description
+A simple chat application using ionic3, angular4 and firebase
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## How to use the application
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
+#### Install ionic cordova
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
 ```
-
-Then, to run it, cd into `myBlank` and run:
-
+#### To Run.
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+cd ChatApplication
+npm install
+ionic serve
 ```
-
-Substitute ios for android if not on a Mac.
-
-=======
-# chat-application
-A simple chat application using ionic3, angular4 and firebase
->>>>>>> 103bfaafc67ca7a46c6f9709f28cecd0373bac77
+#### To generate an apk
+```bash
+ionic cordova platform add android
+ionic cordova build android
+```
+#### To run in emulator
+```bash
+ionic cordova run android
+```
