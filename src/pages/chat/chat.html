@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content #content padding>
 
 <div class="chatMessages">
 	<div *ngFor="let message of messages" [class]="message.specialMsg ? 'messages specialMsg' : 'messages'">
@@ -28,7 +28,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-input type="text" [(ngModel)]="message"></ion-input>
+    <ion-input type="text" scrollDownOnLoad="true" [(ngModel)]="message"></ion-input>
     <ion-buttons end (click)="sendMessage()">
       <button ion-button icon-right color="primary">
         Send

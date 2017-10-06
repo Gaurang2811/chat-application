@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -16,6 +16,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class ChatPage {
 
+  @ViewChild('content') content:any;
+
 	private username: string;
 	private message: string;
 
@@ -28,6 +30,10 @@ export class ChatPage {
   		// console.log(data);
   		this.messages = data;
   	})
+  }
+
+  ionViewDidEnter(){
+    this.content.scrollToBottom();
   }
 
   ionViewDidLoad() {
@@ -60,14 +66,17 @@ export class ChatPage {
 			message: this.message
 		})
 		.then((data) => {
-			//message send sucessfully
-			console.log(data);
+      this.scrollToBottom(300);
 		})
 		this.message = '';
   		// console.log('your awesome message is-', this.message);
   	}else{
   		this.showAlert('Error', "Please provide a valid message");
   	}
+  }
+
+  scrollToBottom(time) {
+    this.content.scrollToBottom(time);
   }
 
 }
